@@ -193,7 +193,12 @@ def load_rules_from_file():
         except json.JSONDecodeError:
             print("错误：JSON 文件格式不正确！")
             return {}
-
+@app.get("/")
+async def health_check():
+    """
+    根目录健康检查接口
+    """
+    return {"status": "ok", "message": "审查规则服务正在运行！"}
 
 @app.get("/api/rules/{filename}")
 async def get_rules(filename: str, category: Optional[str] = Query(None)):
@@ -213,4 +218,5 @@ async def get_rules(filename: str, category: Optional[str] = Query(None)):
     # 如果客户端传了 category 参数，可以进一步过滤（如果你未来的规则里加了 category 字段的话）
     if category and rules:
         rules = [r for r in rules if r.get("category") == category]
+
     return rules
