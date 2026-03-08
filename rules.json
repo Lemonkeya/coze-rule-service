@@ -1,0 +1,23 @@
+{
+    "java_basics": [
+        {
+            "rule_code": "JAV001",
+            "rule_name": "类名大写驼峰",
+            "description": "Java类名必须以大写字母开头，遵循驼峰命名法。",
+            "category": "命名规范"
+        },
+        {
+            "rule_code": "JAV002",
+            "rule_name": "限制行宽",
+            "description": "单行代码长度不建议超过120个字符。",
+            "category": "代码长度"
+        }
+    ],
+    "python_basics": [
+        {
+            "rule_code": "EXP0010",
+            "rule_name": "运算符前后空格",
+            "description": "二元运算符两边应加一个空格。"
+        }
+    ]
+}
